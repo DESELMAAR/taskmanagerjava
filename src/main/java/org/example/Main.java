@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         StudentManager manager = new StudentManager();
         Scanner scanner = new Scanner(System.in);
+//
         int choice;
 
         do {
