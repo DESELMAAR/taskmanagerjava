@@ -1,12 +1,12 @@
 package org.example;
-
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         StudentManager manager = new StudentManager();
         Scanner scanner = new Scanner(System.in);
-//
+        TestConnection.main(null);
         int choice;
 
         do {

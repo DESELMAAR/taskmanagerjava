@@ -186,4 +186,25 @@ public void addStudent(String name, int age, double grade) {
             System.out.println("Error saving data: " + e.getMessage());
         }
     }
+
+    // import java.util.*;
+    public List<Student> getAllStudents() {
+        List<Student> list = new ArrayList<>();
+        try (Connection conn = DBConnection.getConnection()) {
+            var stmt = conn.createStatement();
+            var rs = stmt.executeQuery("SELECT * FROM students");
+            while (rs.next()) {
+                list.add(new Student(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getInt("age"),
+                        rs.getDouble("grade")));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+
 }
